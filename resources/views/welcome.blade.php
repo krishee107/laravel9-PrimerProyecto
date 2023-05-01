@@ -1,16 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Inicio</title>
-</head>
-<body>
-    @include('partials.navigation')
+    @extends('layouts.app')
 
-    <h1>Inicio</h1>
+    @section('title', 'Inicio')
 
-    
-</body>
-</html>
+    @section('content')
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Inicio</h1>
+                </div>
+            </div>
+        </div>
+    @endsection
