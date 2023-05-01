@@ -1,4 +1,4 @@
-    @extends('layouts.app')
+{{--    @extends('layouts.app')
 
 
     @section('title', 'Blog')
@@ -10,4 +10,15 @@
                 </div>
             </div>
         </div>
-    @endsection
+    @endsection--}}
+
+    <x-layouts.app title="Blog" :sum="2+2">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Blog</h1>
+                </div>
+            </div>
+        </div>
+</x-layouts.app>
+
