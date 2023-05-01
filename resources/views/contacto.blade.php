@@ -7,6 +7,7 @@
     <title>Contacto</title>
 </head>
 <body>
+    @include('partials.navigation')
     Contacto
 </body>
 </html>

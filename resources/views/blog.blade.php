@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    @include('partials.navigation')
     Blog
 </body>
 
