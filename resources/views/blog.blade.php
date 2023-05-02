@@ -17,6 +17,10 @@
             <div class="row">
                 <div class="col-12">
                     <h1>Blog</h1>
+                    @dump($posts) <!-- dump() es una funcion de laravel que muestra el contenido de una variable -->
+                    @foreach($posts as $post) <!-- @ foreach es un bucle de laravel -->
+                        <li>{{$post}}</li>
+                    @endforeach
                 </div>
             </div>
         </div>
