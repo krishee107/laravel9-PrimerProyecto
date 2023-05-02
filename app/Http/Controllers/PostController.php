@@ -23,6 +23,19 @@ class PostController extends Controller
         // Con eloquent
         $posts = Post::get();
 
-        return view('blog', ['posts' => $posts]);
+        return view('posts.index', ['posts' => $posts]);
+    }
+
+    /*public function show($id)
+    {
+    // return Post::find($id); // --> Retornar un solo post con eloquent (no se necesita el get() porque es solo uno) y se muestra en formato json
+    return Post::findOrFail($id); // --> Si no encuentra el post, muestra un error 404
+    } */
+
+    //Hacer la misma función pero especificando el tipo de dato que se va a recibir
+    public function show($id)
+    {
+        $post = Post::findOrFail($id);
+        return view('posts.show', ['post' => $post]);
     }
 }

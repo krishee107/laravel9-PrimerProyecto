@@ -19,7 +19,7 @@
                     <h1>Blog</h1>
                     @dump($posts) <!-- dump() es una funcion de laravel que muestra el contenido de una variable -->
                     @foreach($posts as $post) <!-- @ foreach es un bucle de laravel -->
-                        <li>{{$post->id }} - {{$post->title}}</li>
+                        <h2><a href="{{route('posts.show', $post->id)}}">{{$post->title}}</a></h2>
                     @endforeach
                 </div>
             </div>

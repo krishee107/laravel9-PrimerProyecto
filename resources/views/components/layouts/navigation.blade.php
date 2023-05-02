@@ -4,7 +4,7 @@
         </li>
 
         <li>
-            <a href="{{route('blog')}}">Blog</a>
+            <a href="{{route('posts.index')}}">Blog</a>
         </li>
 
         <li>

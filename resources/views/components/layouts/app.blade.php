@@ -13,6 +13,6 @@
     @yield('content') --}}
     <x-layouts.navigation/>
     {{$slot}}
-    {{$sum}}
+    {{$sum ?? ''}}
 </body>
 </html>

@@ -24,4 +24,5 @@ Route::view('/about', 'about')->name('about');
 })->name('blog'); */
 
 // Route::get('/blog', 'App\Http\Controllers\PostController@index')->name('blog'); --> Imprimiendo directamente la ruta del controlador
-Route::get('/blog', [PostController::class, 'index'])->name('blog'); //Llamando al controlador y importándolo arriba
+Route::get('/blog', [PostController::class, 'index'])->name('posts.index'); //Por convención index se usa para mostrar una lista de elementos
+Route::get('/blog/{id}', [PostController::class, 'show'])->name('posts.show'); //Por convención show se usa para mostrar un elemento en específico
