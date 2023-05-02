@@ -44,8 +44,18 @@ class PostController extends Controller
         return view('posts.create');
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        return "HOLA";
+        //return $request // --> Para mostrar todos los datos del formulario (no es recomendable) en formato json
+        //return $request->all(); // --> Para mostrar todos los datos del formulario
+        //return $request->input('title'); // --> Para mostrar el titulo del post, lo llamamos por el name del input
+        //CON ELOQUENT
+        $post = new Post;
+        $post->title = $request->input('title');
+        $post->body = $request->input('body');
+        $post->save(); // --> Guarda los datos en la base de datos
+
+        // return redirect()->route('posts.index'); // --> Redirecciona a la ruta posts.index
+        return to_route('posts.index'); // --> Redirecciona a la ruta posts.index
     }
 }
