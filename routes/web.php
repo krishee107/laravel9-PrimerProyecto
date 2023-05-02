@@ -25,4 +25,6 @@ Route::view('/about', 'about')->name('about');
 
 // Route::get('/blog', 'App\Http\Controllers\PostController@index')->name('blog'); --> Imprimiendo directamente la ruta del controlador
 Route::get('/blog', [PostController::class, 'index'])->name('posts.index'); //Por convención index se usa para mostrar una lista de elementos
+Route::get('/blog/create', [PostController::class, 'create'])->name('posts.create'); //Por convención create se usa para mostrar un formulario para crear un elemento
+Route::post('/blog', [PostController::class, 'store'])->name('posts.store'); //Por convención store se usa para guardar un elemento
 Route::get('/blog/{id}', [PostController::class, 'show'])->name('posts.show'); //Por convención show se usa para mostrar un elemento en específico

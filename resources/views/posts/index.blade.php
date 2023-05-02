@@ -17,6 +17,7 @@
             <div class="row">
                 <div class="col-12">
                     <h1>Blog</h1>
+                    <a href="{{route('posts.create')}}">Crear nuevo post</a>
                     @dump($posts) <!-- dump() es una funcion de laravel que muestra el contenido de una variable -->
                     @foreach($posts as $post) <!-- @ foreach es un bucle de laravel -->
                         <h2><a href="{{route('posts.show', $post->id)}}">{{$post->title}}</a></h2>

@@ -38,4 +38,14 @@ class PostController extends Controller
         $post = Post::findOrFail($id);
         return view('posts.show', ['post' => $post]);
     }
+
+    public function create()
+    {
+        return view('posts.create');
+    }
+
+    public function store()
+    {
+        return "HOLA";
+    }
 }
