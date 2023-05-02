@@ -28,3 +28,5 @@ Route::get('/blog', [PostController::class, 'index'])->name('posts.index'); //Po
 Route::get('/blog/create', [PostController::class, 'create'])->name('posts.create'); //Por convención create se usa para mostrar un formulario para crear un elemento
 Route::post('/blog', [PostController::class, 'store'])->name('posts.store'); //Por convención store se usa para guardar un elemento
 Route::get('/blog/{id}', [PostController::class, 'show'])->name('posts.show'); //Por convención show se usa para mostrar un elemento en específico
+Route::get('/blog/{post}/edit', [PostController::class, 'edit'])->name('posts.edit'); // Por convención edit se usa para mostrar un formulario para editar un elemento
+Route::patch('/blog/{post}', [PostController::class, 'update'])->name('posts.update'); // Por convención update se usa para actualizar un elemento

@@ -69,4 +69,31 @@ class PostController extends Controller
         // return redirect()->route('posts.index'); // --> Redirecciona a la ruta posts.index
         return to_route('posts.index'); // --> Redirecciona a la ruta posts.index
     }
+
+    public function edit(Post $post)
+    {
+        //$post = Post::findOrFail($post);
+        return view('posts.edit', ['post' => $post]);
+    }
+
+    public function update(Request $request, Post $post)
+    {
+        //Validar fornularios
+        $request->validate([
+            // --> Validar los datos del formulario
+            'title' => 'required|min:3',
+            // --> El titulo es requerido y debe tener un minimo de 3 caracteres
+            'body' => 'required' // --> El cuerpo es requerido
+        ]);
+
+        // $post = Post::findOrFail($post);
+        $post->title = $request->input('title');
+        $post->body = $request->input('body');
+        $post->save(); // --> Guarda los datos en la base de datos
+
+        session()->flash('status', 'Post was updated'); // --> Muestra un mensaje de confirmación de que el post fue creado
+
+        // return redirect()->route('posts.index'); // --> Redirecciona a la ruta posts.index
+        return to_route('posts.index'); // --> Redirecciona a la ruta posts.index
+    }
 }
