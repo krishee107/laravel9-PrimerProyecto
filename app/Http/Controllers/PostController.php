@@ -55,6 +55,8 @@ class PostController extends Controller
         $post->body = $request->input('body');
         $post->save(); // --> Guarda los datos en la base de datos
 
+        session()->flash('status', 'Post was created'); // --> Muestra un mensaje de confirmación de que el post fue creado
+
         // return redirect()->route('posts.index'); // --> Redirecciona a la ruta posts.index
         return to_route('posts.index'); // --> Redirecciona a la ruta posts.index
     }

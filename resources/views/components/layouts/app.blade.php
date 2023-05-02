@@ -12,6 +12,13 @@
 
     @yield('content') --}}
     <x-layouts.navigation/>
+
+      @if(session('status')) <!-- @ if es una condicion de laravel -->
+         <div class="status">
+            {{session('status')}} <!-- session() es una funcion de laravel que muestra el contenido de una variable de sesion -->
+          </div>
+      @endif
+
     {{$slot}}
     {{$sum ?? ''}}
 </body>
