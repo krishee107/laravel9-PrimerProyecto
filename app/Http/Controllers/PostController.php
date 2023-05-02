@@ -50,6 +50,15 @@ class PostController extends Controller
         //return $request->all(); // --> Para mostrar todos los datos del formulario
         //return $request->input('title'); // --> Para mostrar el titulo del post, lo llamamos por el name del input
         //CON ELOQUENT
+
+        //Validar fornularios
+        $request->validate([
+            // --> Validar los datos del formulario
+            'title' => 'required|min:3',
+            // --> El titulo es requerido y debe tener un minimo de 3 caracteres
+            'body' => 'required' // --> El cuerpo es requerido
+        ]);
+
         $post = new Post;
         $post->title = $request->input('title');
         $post->body = $request->input('body');
